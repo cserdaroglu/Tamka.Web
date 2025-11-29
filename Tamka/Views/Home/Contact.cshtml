@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/_Layout.cshtml";
+
+}
+
+<div class="page-content">
+
+    <!-- BREADCRUMB ROW -->
+    <div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-1">
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+                <li>İletişim</li>
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
+    <!-- SECTION CONTENT -->
+    <div class="section-full p-t80 p-b50">
+        <div class="container-fluid">
+            <div class="wt-box col-md-6">
+                <h4 class="text">İLETİŞİM </h4>
+                <div class="wt-separator-outer m-b30">
+                    <div class="wt-separator style-square">
+                        <span class="separator-left bg-primary"></span>
+                        <span class="separator-right bg-primary"></span>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-6 m-b30">
+                        <div class="wt-icon-box-wraper bx-style-1 p-a15 left clearfix">
+                            <div class="wt-icon-box-sm bg-primary corner">
+                                <span class="icon-cell text-white">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                            </div>
+                            <div class="icon-content">
+                                <h5 class="wt-tilte text-uppercase">Telefon</h5>
+
+                                <p> 0 533 632 1918  -   0 505 998 6860</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 m-b30">
+                        <div class="wt-icon-box-wraper bx-style-1 p-a15 left clearfix">
+                            <div class="wt-icon-box-sm bg-primary corner">
+                                <span class="icon-cell text-white">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                            </div>
+                            <div class="icon-content">
+                                <h5 class="wt-tilte text-uppercase">Email</h5>
+                                <p>info@tamkayapi.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 m-b30">
+                        <div class="wt-icon-box-wraper bx-style-1 p-a15 left clearfix">
+                            <div class="wt-icon-box-sm bg-primary corner">
+                                <span class="icon-cell text-white">
+                                    <i class="fa fa-map-marker"></i>
+                                </span>
+                            </div>
+                            <div class="">
+                                <h5 class="wt-tilte text-uppercase">Adres - Istanbul</h5>
+                                <p>Ahmediye Mah. Emin  Ongan Sok. No:2/4 Üsküdar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 m-b30">
+                        <div class="wt-icon-box-wraper bx-style-1 p-a15 left clearfix">
+                            <div class="wt-icon-box-sm bg-primary corner">
+                                <span class="icon-cell text-white">
+                                    <i class="fa fa-map-marker"></i>
+                                </span>
+                            </div>
+                            <div class="">
+                                <h5 class="wt-tilte text-uppercase">Adres - Ankara</h5>
+                                <p>Zafer Mah. Eti Cad. No:72/4 Polatlı</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="wt-box col-md-6">
+                <h4 class="text">İLETİŞİM FORMU </h4>
+                <div class="wt-separator-outer m-b30">
+                    <div class="wt-separator style-square">
+                        <span class="separator-left bg-primary"></span>
+                        <span class="separator-right bg-primary"></span>
+                    </div>
+                </div>
+                @if (Context.Session.GetString("mail") != null)
+                {
+                    <h1>Mail Gönderildi.</h1>
+                }
+                else
+                {
+                    <form method="post" action="/Home/SendMail">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input name="name" type="text" required="" class="form-control" placeholder="Ad-Soyad">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <input name="email" type="text" class="form-control" required="" placeholder="Mail Adresiniz">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon v-align-m"><i class="fa fa-pencil"></i></span>
+                                        <textarea name="body" rows="4" class="form-control " required=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 text-right">
+                                <button type="submit" value="Submit" class="site-button skew-icon-btn m-r15">Gönder <i class="fa fa-angle-double-right"></i></button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <iframe width="100%"
+            height="450"
+            frameborder="0" style="border:0",
+            loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.845824255307!2d29.012560899999998!3d41.020238899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab8276b4f7bfd%3A0x8ddf7992d641674b!2sAhmediye%2C%20Emin%20Ongan%20Sk.%20No%3A2%2F4%2C%2034672%20%C3%9Csk%C3%BCdar%2F%C4%B0stanbul!5e0!3m2!1sen!2str!4v1644981132939"
+            allowfullscreen></iframe>
+
+
+
+
+
