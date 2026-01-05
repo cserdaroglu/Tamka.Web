@@ -6,4 +6,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+<ItemGroup>
+  <Content Include="Content/**/*" CopyToPublishDirectory="Always" />
+</ItemGroup>
+
+<ItemGroup>
+  <Content Include="wwwroot/**/*" CopyToPublishDirectory="Always" />
+</ItemGroup>
+
 </Project>
